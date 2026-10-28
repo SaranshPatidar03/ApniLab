@@ -1,0 +1,1030 @@
+import { LabItem, ProgressItem, StudentProfile } from '../types/lab';
+
+export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
+  en: [
+    // --- PHYSICS EXPERIMENTS ---
+    {
+      id: 'ohms-law',
+      title: "Ohm's Law & Simple Circuit",
+      category: 'Physics',
+      difficulty: 'Beginner',
+      duration: '15 mins',
+      description: 'Verify V = I × R by adjusting DC voltage and load resistance. Observe live current changes, meter readings, and bulb brightness.',
+      route: '/lab/ohms-law',
+      isInteractive: true,
+      rating: 4.9,
+      enrolledCount: 1420,
+      iconName: 'flash',
+      badgeColor: '#4F46E5',
+      apparatus: [
+        'Battery Eliminator / DC Power Supply (0V - 12V)',
+        'Fixed Resistor / Rheostat (5Ω - 500Ω)',
+        'DC Ammeter (0 - 1.5A)',
+        'DC Voltmeter (0 - 15V)',
+        'Plug Key & Connecting Wires',
+        'Circuit Indicator Bulb',
+      ],
+      objectives: [
+        'Demonstrate that electric current flowing through a conductor is directly proportional to voltage.',
+        'Calculate resistance using the experimental ratio R = V / I.',
+        'Observe how increasing resistance reduces circuit current and bulb brightness.',
+      ],
+      theory:
+        "Ohm's Law states that at constant temperature, the current (I) flowing through a metallic conductor is directly proportional to the potential difference (V) across its ends: V = I × R.",
+      safety: [
+        'Ensure the plug key is removed while making or changing connections.',
+        'Double-check meter polarities (+ to positive terminal, - to negative terminal).',
+        'Avoid prolonged high current to prevent resistor overheating.',
+      ],
+    },
+    {
+      id: 'simple-pendulum',
+      title: 'Simple Pendulum & Time Period',
+      category: 'Physics',
+      difficulty: 'Beginner',
+      duration: '20 mins',
+      description: 'Determine the time period of a simple pendulum. Verify how length affects oscillation time and plot an L vs T² graph.',
+      route: '/lab/simple-pendulum',
+      isInteractive: false,
+      rating: 4.7,
+      enrolledCount: 980,
+      iconName: 'speedometer-outline',
+      badgeColor: '#10B981',
+      apparatus: [
+        'Heavy Metallic Spherical Bob with Hook',
+        'Light Inextensible Cotton Thread (60cm - 120cm)',
+        'Rigid Iron Stand with Clamp & Split Cork',
+        'Digital Laboratory Stopwatch (0.01s precision)',
+        'Vernier Calipers & Meter Ruler',
+      ],
+      objectives: [
+        'Measure the time taken for 20 complete oscillations of a simple pendulum.',
+        'Demonstrate that the time period T is proportional to the square root of thread length (T ∝ √L).',
+        'Verify that time period is independent of bob mass and small angular displacement (θ < 10°).',
+      ],
+      theory:
+        'A simple pendulum consists of a small heavy bob suspended by a light inextensible thread. For small oscillations, its time period is given by T = 2π√(L/g), where L is the effective length and g is acceleration due to gravity.',
+      safety: [
+        'Ensure the clamp is securely tightened so the thread does not slip.',
+        'Release the bob gently without giving it any initial push or circular twist.',
+        'Keep amplitude small (under 10 degrees) for true simple harmonic oscillation.',
+      ],
+    },
+    {
+      id: 'reflection-light',
+      title: 'Reflection of Light using a Plane Mirror',
+      category: 'Physics',
+      difficulty: 'Beginner',
+      duration: '15 mins',
+      description: 'Trace incident and reflected light rays on a drawing board to verify the fundamental laws of reflection.',
+      route: '/lab/reflection-light',
+      isInteractive: false,
+      rating: 4.8,
+      enrolledCount: 1120,
+      iconName: 'sunny-outline',
+      badgeColor: '#3B82F6',
+      apparatus: [
+        'Plane Mirror Strip with Wooden Stand',
+        'White Drawing Sheet & Drawing Board',
+        'Four Board Fixing Pins & Four Optical Pins',
+        'Protractor, Ruler & Sharp Pencil',
+      ],
+      objectives: [
+        'Verify that the angle of incidence equals the angle of reflection (∠i = ∠r).',
+        'Demonstrate that the incident ray, reflected ray, and the normal at the point of incidence lie in the same plane.',
+        'Observe image distance equals object distance behind a plane mirror.',
+      ],
+      theory:
+        'When light strikes a polished flat surface, it bounces back into the same medium. The angle between the incident ray and normal equals the angle between reflected ray and normal.',
+      safety: [
+        'Handle glass mirror strips carefully by the edges to prevent breakage.',
+        'Insert optical pins vertically into the drawing board without bending.',
+      ],
+    },
+    {
+      id: 'refraction-glass-slab',
+      title: 'Refraction of Light through a Glass Slab',
+      category: 'Physics',
+      difficulty: 'Intermediate',
+      duration: '20 mins',
+      description: 'Trace the path of a light ray passing through a rectangular glass slab and observe lateral displacement.',
+      route: '/lab/refraction-glass-slab',
+      isInteractive: false,
+      rating: 4.8,
+      enrolledCount: 890,
+      iconName: 'cube-outline',
+      badgeColor: '#6366F1',
+      apparatus: [
+        'Rectangular Glass Slab',
+        'Drawing Board & White Sheet',
+        'Optical Pins & Board Pins',
+        'Protractor & 30cm Ruler',
+      ],
+      objectives: [
+        'Observe light bending towards the normal when passing from air (rarer) to glass (denser).',
+        'Measure angle of incidence (∠i), angle of refraction (∠r), and angle of emergence (∠e).',
+        'Confirm that emergent ray is parallel to the incident ray with a lateral shift.',
+      ],
+      theory:
+        'Refraction is the change in direction of light when traveling from one optical medium to another due to change in speed. Snell’s Law states sin(i) / sin(r) = constant (refractive index μ).',
+      safety: [
+        'Keep the glass slab clean and free of fingerprints.',
+        'Align pins by observing their base points through the glass.',
+      ],
+    },
+    {
+      id: 'magnetic-field-lines',
+      title: 'Magnetic Field Lines around a Bar Magnet',
+      category: 'Physics',
+      difficulty: 'Beginner',
+      duration: '15 mins',
+      description: 'Map the continuous lines of magnetic force from North to South pole using a magnetic compass needle and iron filings.',
+      route: '/lab/magnetic-field-lines',
+      isInteractive: false,
+      rating: 4.6,
+      enrolledCount: 760,
+      iconName: 'magnet-outline',
+      badgeColor: '#0EA5E9',
+      apparatus: [
+        'Bar Magnet with North and South Poles Marked',
+        'Small Magnetic Plotting Compass',
+        'Smooth Drawing Board & White Sheet',
+        'Fine Iron Filings in Shaker Container',
+      ],
+      objectives: [
+        'Map magnetic field lines emerging from North pole and curving into South pole.',
+        'Observe that field lines are dense near the poles where magnetic strength is strongest.',
+        'Verify that two magnetic field lines never intersect each other.',
+      ],
+      theory:
+        'A magnetic field is the region around a magnet where its magnetic force can be detected. Magnetic field lines are imaginary closed continuous curves showing force direction.',
+      safety: [
+        'Keep external iron objects and mobile phones away from the compass needle.',
+        'Do not inhale fine iron filings; use paper barrier when handling.',
+      ],
+    },
+
+    // --- CHEMISTRY EXPERIMENTS ---
+    {
+      id: 'acids-bases',
+      title: 'Acids and Bases with Safe Indicators',
+      category: 'Chemistry',
+      difficulty: 'Beginner',
+      duration: '20 mins',
+      description: 'Test common household and laboratory liquids with blue/red litmus, turmeric paper, and phenolphthalein indicators.',
+      route: '/lab/acids-bases',
+      isInteractive: false,
+      rating: 4.9,
+      enrolledCount: 1340,
+      iconName: 'beaker-outline',
+      badgeColor: '#EC4899',
+      apparatus: [
+        'Blue and Red Litmus Paper Strips',
+        'Natural Turmeric Paper Indicator',
+        'Phenolphthalein Solution & Glass Droppers',
+        'Test Tubes with Wooden Test Tube Stand',
+        'Dilute Hydrochloric Acid (0.1M) & Dilute Sodium Hydroxide (0.1M)',
+        'Lemon Juice, Vinegar & Soap Solution Samples',
+        'Laboratory Protective Safety Goggles',
+      ],
+      objectives: [
+        'Classify test solutions as acidic, basic, or neutral based on indicator color changes.',
+        'Observe that acids turn blue litmus red, while bases turn red litmus blue.',
+        'Demonstrate neutralization reaction when acid and base are mixed in equal proportion.',
+      ],
+      theory:
+        'Acids produce hydrogen ions (H⁺) in aqueous solution and have sour taste. Bases produce hydroxide ions (OH⁻) and have bitter taste with soapy touch. Indicators are substances that change color in acidic or basic media.',
+      safety: [
+        'Wear laboratory safety goggles throughout the experiment.',
+        'Never taste or directly smell any chemical substance.',
+        'Rinse immediately with plenty of running water if any chemical touches skin.',
+      ],
+    },
+    {
+      id: 'physical-chemical-changes',
+      title: 'Physical and Chemical Changes',
+      category: 'Chemistry',
+      difficulty: 'Beginner',
+      duration: '20 mins',
+      description: 'Contrast reversible physical transformations with irreversible chemical reactions including magnesium burning and iron displacement.',
+      route: '/lab/physical-chemical-changes',
+      isInteractive: false,
+      rating: 4.7,
+      enrolledCount: 820,
+      iconName: 'flame-outline',
+      badgeColor: '#F59E0B',
+      apparatus: [
+        'Clean Magnesium Ribbon Strip & Sandpaper',
+        'Pair of Laboratory Tongs & Spirit Burner',
+        'Watch Glass & Porcelain Dish',
+        'Copper Sulfate Crystals & Iron Nails',
+        'Test Tubes & 100ml Glass Beaker',
+      ],
+      objectives: [
+        'Distinguish between reversible physical changes and irreversible chemical reactions.',
+        'Observe the dazzling white light during combustion of magnesium (2Mg + O₂ → 2MgO).',
+        'Observe iron displacing copper from blue copper sulfate solution, forming green iron sulfate.',
+      ],
+      theory:
+        'A physical change alters form, size, or physical state without forming new substances. A chemical change rearranges chemical bonds to produce entirely new substances with distinct chemical properties.',
+      safety: [
+        'Do not look directly at the intensely bright magnesium flame; view from an angle.',
+        'Always hold burning ribbon with metal tongs over a watch glass.',
+        'Allow heated porcelain dishes to cool naturally before touching.',
+      ],
+    },
+    {
+      id: 'separation-mixtures',
+      title: 'Separation of Substances & Mixtures',
+      category: 'Chemistry',
+      difficulty: 'Beginner',
+      duration: '20 mins',
+      description: 'Separate a heterogeneous sand and salt water mixture using sedimentation, decantation, filtration, and evaporation.',
+      route: '/lab/separation-mixtures',
+      isInteractive: false,
+      rating: 4.6,
+      enrolledCount: 710,
+      iconName: 'filter-outline',
+      badgeColor: '#14B8A6',
+      apparatus: [
+        'Glass Filter Funnel & Circular Filter Paper Cone',
+        'Two 250ml Glass Beakers & Glass Stirring Rod',
+        'Iron Tripod Stand with Wire Gauze & Burner',
+        'Porcelain Evaporating Dish',
+        'Mixture Sample of Fine Sand, Table Salt (NaCl), and Water',
+      ],
+      objectives: [
+        'Understand how differences in solubility and particle size enable separation.',
+        'Filter insoluble sand residue using folded filter paper in a funnel.',
+        'Evaporate the clear saltwater filtrate to recover pure dry sodium chloride crystals.',
+      ],
+      theory:
+        'Mixtures contain two or more substances combined physically. Insoluble solids can be separated from liquids by filtration, while dissolved soluble solids are recovered through evaporation and crystallization.',
+      safety: [
+        'Use wire gauze between the burner flame and glass beakers to prevent cracking.',
+        'Turn off the burner before all liquid evaporates to avoid splattering hot salt.',
+      ],
+    },
+
+    // --- BIOLOGY EXPERIMENTS ---
+    {
+      id: 'plant-animal-cell',
+      title: 'Plant and Animal Cell Exploration',
+      category: 'Biology',
+      difficulty: 'Beginner',
+      duration: '25 mins',
+      description: 'Prepare temporary stained mounts of onion peel and human cheek cells to examine cell structure under a compound microscope.',
+      route: '/lab/plant-animal-cell',
+      isInteractive: false,
+      rating: 4.9,
+      enrolledCount: 1510,
+      iconName: 'eye-outline',
+      badgeColor: '#10B981',
+      apparatus: [
+        'Compound Optical Microscope (10x & 40x objectives)',
+        'Clean Glass Microscope Slides & Cover Slips',
+        'Fresh Onion Bulb & Dissecting Forceps',
+        'Safranin Stain & Methylene Blue Stain Solutions',
+        'Glycerin & Glass Droppers with Filter Paper Strips',
+        'Sterile Wooden Toothpicks',
+      ],
+      objectives: [
+        'Prepare clean, bubble-free temporary mounts of plant and animal tissue.',
+        'Identify cell wall, cell membrane, cytoplasm, nucleus, and large central vacuole in onion peel cells.',
+        'Compare plant cells with animal cheek cells, highlighting absence of cell walls in animal cells.',
+      ],
+      theory:
+        'The cell is the basic structural and functional unit of life. Plant cells are characterized by rigid cellulose cell walls, large central vacuoles, and plastids. Animal cells lack cell walls and possess flexible cell membranes.',
+      safety: [
+        'Gently scrape the inner cheek using a sterile toothpick without applying excess pressure.',
+        'Properly dispose of cheek scrape toothpicks immediately.',
+        'Lower cover slips slowly at a 45° angle to prevent air bubble formation.',
+      ],
+    },
+    {
+      id: 'photosynthesis-starch',
+      title: 'Photosynthesis & Starch Test in Leaves',
+      category: 'Biology',
+      difficulty: 'Intermediate',
+      duration: '25 mins',
+      description: 'Demonstrate that sunlight is essential for photosynthesis by performing an iodine starch test on green leaves.',
+      route: '/lab/photosynthesis-starch',
+      isInteractive: false,
+      rating: 4.8,
+      enrolledCount: 930,
+      iconName: 'leaf-outline',
+      badgeColor: '#059669',
+      apparatus: [
+        'Potted Green Plant (Destarched for 48 hours)',
+        'Black Paper Strips & Paper Clips',
+        'Beaker, Boiling Water Bath & Test Tubes',
+        'Ethanol / Denatured Spirit (95%)',
+        'Dilute Iodine Solution & Glass Petri Dish',
+        'Dissecting Forceps & Dropper',
+      ],
+      objectives: [
+        'Demonstrate that chlorophyll and sunlight are necessary for photosynthesis.',
+        'Decolorize leaves safely in a boiling water ethanol bath.',
+        'Observe characteristic blue-black coloration with iodine indicating starch formation in sun-exposed areas.',
+      ],
+      theory:
+        'Photosynthesis is the process by which green plants manufacture carbohydrates from carbon dioxide and water in the presence of sunlight and chlorophyll: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂. Excess glucose is converted into insoluble starch.',
+      safety: [
+        'Ethanol is highly inflammable. Never heat an ethanol tube directly over an open flame; always use a water bath.',
+        'Use forceps to transfer hot leaves between baths.',
+      ],
+    },
+    {
+      id: 'seed-germination',
+      title: 'Seed Germination & Growth Stages',
+      category: 'Biology',
+      difficulty: 'Beginner',
+      duration: '15 mins',
+      description: 'Dissect soaked dicot seeds to identify the embryo, seed coat, cotyledons, radicle, and plumule.',
+      route: '/lab/seed-germination',
+      isInteractive: false,
+      rating: 4.7,
+      enrolledCount: 780,
+      iconName: 'nutrition-outline',
+      badgeColor: '#84CC16',
+      apparatus: [
+        'Soaked Gram (Chana) or Bean Seeds (soaked for 24h)',
+        'Petri Dishes with Moist Cotton Wool',
+        'Hand Magnifying Glass (5x)',
+        'Dissecting Needle & Forceps',
+        'Millimeter Ruler',
+      ],
+      objectives: [
+        'Dissect a soaked dicot seed and remove its outer seed coat (testa).',
+        'Identify food-storing cotyledons and the embryonic axis.',
+        'Distinguish between the radicle (future root) and plumule (future shoot).',
+      ],
+      theory:
+        'Germination is the awakening of seed dormancy where the embryo resumes growth upon receiving water, oxygen, and favorable warmth. The radicle emerges first to establish root anchorage, followed by elongation of the plumule.',
+      safety: [
+        'Handle dissecting needles carefully to prevent finger pricks.',
+        'Keep cotton moist but not submerged to ensure adequate oxygen for seeds.',
+      ],
+    },
+
+    // --- MATHEMATICS & SCIENTIFIC ACTIVITIES ---
+    {
+      id: 'binary-converter',
+      title: 'Number Systems & Binary Conversion',
+      category: 'Mathematics',
+      difficulty: 'Beginner',
+      duration: '20 mins',
+      description: 'Interactive 8-bit switchboard lab. Explore base-2 place values, bit combinations, and successive division-by-2 steps.',
+      route: '/lab/binary-converter',
+      isInteractive: true,
+      rating: 4.8,
+      enrolledCount: 980,
+      iconName: 'calculator-outline',
+      badgeColor: '#06B6D4',
+      apparatus: [
+        '8-Bit Place Value Register Bank (2⁷ to 2⁰)',
+        'Radix Transformation Engine (Decimal, Binary, Hex, Octal)',
+        'Interactive Division-by-2 Step Tracker',
+        'Positional Value Summation Display',
+      ],
+      objectives: [
+        'Master base-2 binary positional notation with place values 128, 64, 32, 16, 8, 4, 2, and 1.',
+        'Follow the successive division-by-2 algorithm to convert any positive decimal integer to binary.',
+        'Practice place value decomposition and mental arithmetic using interactive switches.',
+      ],
+      theory:
+        'In mathematics, positional numeral systems represent numbers using digits multiplied by powers of the radix base. Decimal uses base-10 with powers of 10, whereas binary uses base-2 with powers of 2.',
+      safety: [
+        'Interactive software-based mathematics simulator; safe for all school grade levels.',
+      ],
+    },
+    {
+      id: 'fractions-geometry',
+      title: 'Fractions, Area & Perimeter Lab',
+      category: 'Mathematics',
+      difficulty: 'Beginner',
+      duration: '20 mins',
+      description: 'Explore geometric plane figures on a grid board to measure perimeter, calculate area, and decompose fractional shapes.',
+      route: '/lab/fractions-geometry',
+      isInteractive: false,
+      rating: 4.7,
+      enrolledCount: 840,
+      iconName: 'shapes-outline',
+      badgeColor: '#8B5CF6',
+      apparatus: [
+        'Unit Square Grid Board (1cm × 1cm grid cells)',
+        'Geometric Plane Shapes (Rectangles, Triangles, Parallelograms)',
+        'Fraction Strip Segment Sets (1/2, 1/3, 1/4, 1/8)',
+        '30cm Metric Ruler & Protractor',
+      ],
+      objectives: [
+        'Calculate boundary perimeter by summing outer side lengths.',
+        'Calculate area using unit grid counting and standard geometric formulas (A = l × w, A = ½ b × h).',
+        'Represent fractional shaded portions of composite 2D geometric regions.',
+      ],
+      theory:
+        'Perimeter represents the one-dimensional total boundary length enclosing a shape. Area measures the two-dimensional surface space occupied by the figure. Fractions express parts of an equal unit area.',
+      safety: [
+        'Safe hands-on mathematical drawing, measurement, and geometry activity.',
+      ],
+    },
+  ],
+
+  hi: [
+    // --- PHYSICS EXPERIMENTS (HINDI) ---
+    {
+      id: 'ohms-law',
+      title: 'ओह्म का नियम एवं सरल विद्युत परिपथ',
+      category: 'Physics',
+      difficulty: 'Beginner',
+      duration: '15 मिनट',
+      description: 'DC वोल्टेज और लोड प्रतिरोध बदलकर V = I × R का सत्यापन करें। वास्तविक समय में धारा परिवर्तन, मीटर रीडिंग और बल्ब की चमक का अवलोकन करें।',
+      route: '/lab/ohms-law',
+      isInteractive: true,
+      rating: 4.9,
+      enrolledCount: 1420,
+      iconName: 'flash',
+      badgeColor: '#4F46E5',
+      apparatus: [
+        'बैटरी एलिमिनेटर / DC विद्युत स्रोत (0V - 12V)',
+        'निश्चित प्रतिरोधक / धारा नियंत्रक (5Ω - 500Ω)',
+        'डिजिटल DC अमीटर (0 - 1.5A)',
+        'डिजिटल DC वोल्टमीटर (0 - 15V)',
+        'प्लग कुंजी एवं संयोजक तार',
+        'तापदीप्त परिपथ संकेतक बल्ब',
+      ],
+      objectives: [
+        'सत्यापित करें कि किसी चालक में प्रवाहित धारा उसके सिरों के विभवांतर के अनुक्रमानुपाती होती है।',
+        'प्रायोगिक अनुपात R = V / I से विद्युत प्रतिरोध की गणना करें।',
+        'अवलोकन करें कि प्रतिरोध बढ़ाने पर परिपथ में धारा और बल्ब की चमक घटती है।',
+      ],
+      theory:
+        'ओह्म के नियमानुसार: यदि ताप और अन्य भौतिक अवस्थाएं स्थिर रहें, तो किसी धात्विक चालक से प्रवाहित धारा (I) उसके सिरों पर आरोपित विभवांतर (V) के सीधे समानुपाती होती है: V = I × R।',
+      safety: [
+        'परिपथ में बदलाव करते समय प्लग कुंजी हमेशा बाहर निकालें।',
+        'मीटरों की ध्रुवीयता (+ को धनात्मक से, - को ऋणात्मक से) सही तरह जांचें।',
+        'अत्यधिक धारा को लंबे समय तक प्रवाहित न करें ताकि तार गर्म न हों।',
+      ],
+    },
+    {
+      id: 'simple-pendulum',
+      title: 'सरल लोलक एवं आवर्तकाल',
+      category: 'Physics',
+      difficulty: 'Beginner',
+      duration: '20 मिनट',
+      description: 'सरल लोलक की सहायता से आवर्तकाल ज्ञात करें। देखें कि धागे की लंबाई दोलन समय को कैसे प्रभावित करती है और L बनाम T² का ग्राफ खींचें।',
+      route: '/lab/simple-pendulum',
+      isInteractive: false,
+      rating: 4.7,
+      enrolledCount: 980,
+      iconName: 'speedometer-outline',
+      badgeColor: '#10B981',
+      apparatus: [
+        'हुक युक्त धातु का गोलाकार गोलक (बॉब)',
+        'अवितान्य हल्का सूती धागा (60cm - 120cm)',
+        'क्लैंप एवं विभक्त कॉर्क युक्त दृढ़ स्टैंड',
+        'डिजिटल स्टॉपवॉच (0.01s शुद्धता)',
+        'वर्नियर कैलिपर्स एवं मीटर पैमाना',
+      ],
+      objectives: [
+        'सरल लोलक के 20 पूर्ण दोलनों के लिए समय मापकर आवर्तकाल ज्ञात करें।',
+        'सिद्ध करें कि आवर्तकाल धागे की प्रभावी लंबाई के वर्गमूल के समानुपाती होता है (T ∝ √L)।',
+        'सत्यापित करें कि छोटे आयाम (θ < 10°) के लिए आवर्तकाल गोलक के द्रव्यमान पर निर्भर नहीं करता।',
+      ],
+      theory:
+        'एक सरल लोलक में अवितान्य धागे से बंधा एक भारी गोलक होता है। छोटे दोलन कोणों के लिए, इसका आवर्तकाल T = 2π√(L/g) होता है, जहाँ L लंबाई और g गुरुत्वीय त्वरण है।',
+      safety: [
+        'सुनिश्चित करें कि क्लैंप कसकर लगा हो ताकि धागा फिसले नहीं।',
+        'गोलक को बिना घुमाव दिए धीरे से छोड़ें।',
+        'सटीक आवर्तकाल के लिए आयाम कोण 10 अंश से कम रखें।',
+      ],
+    },
+    {
+      id: 'reflection-light',
+      title: 'समतल दर्पण द्वारा प्रकाश का परावर्तन',
+      category: 'Physics',
+      difficulty: 'Beginner',
+      duration: '15 मिनट',
+      description: 'ड्राइंग बोर्ड पर आपतित और परावर्तित किरणों को आरेखित करके प्रकाश के परावर्तन के नियमों का सत्यापन करें।',
+      route: '/lab/reflection-light',
+      isInteractive: false,
+      rating: 4.8,
+      enrolledCount: 1120,
+      iconName: 'sunny-outline',
+      badgeColor: '#3B82F6',
+      apparatus: [
+        'स्टैंड युक्त समतल दर्पण पट्टी',
+        'सफेद ड्राइंग शीट एवं ड्राइंग बोर्ड',
+        'चार बोर्ड पिन एवं चार ऑप्टिकल पिन',
+        'चांदा (Protractor), पैमाना एवं पेंसिल',
+      ],
+      objectives: [
+        'सत्यापित करें कि आपतन कोण हमेशा परावर्तन कोण के बराबर होता है (∠i = ∠r)।',
+        'सिद्ध करें कि आपतित किरण, परावर्तित किरण और आपतन बिंदु पर अभिलंब तीनों एक ही तल में होते हैं।',
+        'अवलोकन करें कि समतल दर्पण से बनने वाला प्रतिबिंब दर्पण के पीछे उतनी ही दूरी पर होता है।',
+      ],
+      theory:
+        'जब प्रकाश किसी चिकने चमकदार तल से टकराता है, तो वह उसी माध्यम में वापस लौट जाता है। आपतन कोण (i) सदैव परावर्तन कोण (r) के समान होता है।',
+      safety: [
+        'कांच के दर्पण को किनारों से सावधानीपूर्वक पकड़ें ताकि वह टूटे नहीं।',
+        'पिनों को ड्राइंग बोर्ड में बिल्कुल सीधा लगाएं।',
+      ],
+    },
+    {
+      id: 'refraction-glass-slab',
+      title: 'कांच की पट्टी से प्रकाश का अपवर्तन',
+      category: 'Physics',
+      difficulty: 'Intermediate',
+      duration: '20 मिनट',
+      description: 'आयताकार कांच की पट्टी से होकर गुजरने वाली प्रकाश किरण का मार्ग अनुरेखित करें और पार्श्व विस्थापन का अध्ययन करें।',
+      route: '/lab/refraction-glass-slab',
+      isInteractive: false,
+      rating: 4.8,
+      enrolledCount: 890,
+      iconName: 'cube-outline',
+      badgeColor: '#6366F1',
+      apparatus: [
+        'आयताकार कांच की पट्टी (Glass Slab)',
+        'ड्राइंग बोर्ड एवं सफेद कागज',
+        'ऑप्टिकल पिन एवं बोर्ड पिन',
+        'चांदा एवं 30 सेमी पैमाना',
+      ],
+      objectives: [
+        'अवलोकन करें कि प्रकाश किरण विरल माध्यम (वायु) से सघन माध्यम (कांच) में जाने पर अभिलंब की ओर झुकती है।',
+        'आपतन कोण (∠i), अपवर्तन कोण (∠r) और निर्गत कोण (∠e) मापें।',
+        'सत्यापित करें कि निर्गत किरण आपतित किरण के समानांतर होती है और पार्श्व विस्थापन दर्शाती है।',
+      ],
+      theory:
+        'जब प्रकाश एक पारदर्शी माध्यम से दूसरे में प्रवेश करता है, तो चाल में परिवर्तन के कारण उसकी दिशा बदल जाती है जिसे अपवर्तन कहते हैं। स्नेल का नियम: sin(i) / sin(r) = अपवर्तनांक (μ)।',
+      safety: [
+        'कांच की पट्टी को साफ रखें और उंगलियों के निशान न लगने दें।',
+        'कांच के अंदर से देखते हुए पिनों के आधार बिंदुओं को एक सीध में लाएं।',
+      ],
+    },
+    {
+      id: 'magnetic-field-lines',
+      title: 'छड़ चुंबक के चारों ओर चुंबकीय क्षेत्र रेखाएं',
+      category: 'Physics',
+      difficulty: 'Beginner',
+      duration: '15 मिनट',
+      description: 'चुंबकीय दिक्सूचक और लोहे के बुरादे की सहायता से उत्तरी ध्रुव से दक्षिणी ध्रुव तक चुंबकीय बल रेखाएं खींचें।',
+      route: '/lab/magnetic-field-lines',
+      isInteractive: false,
+      rating: 4.6,
+      enrolledCount: 760,
+      iconName: 'magnet-outline',
+      badgeColor: '#0EA5E9',
+      apparatus: [
+        'उत्तर और दक्षिण ध्रुव अंकित छड़ चुंबक',
+        'छोटी चुंबकीय दिक्सूचक सुई (Compass)',
+        'सपाट ड्राइंग बोर्ड एवं सफेद कागज',
+        'लोहे का बारीक बुरादा (Iron Filings)',
+      ],
+      objectives: [
+        'उत्तरी ध्रुव से निकलकर दक्षिणी ध्रुव में प्रवेश करने वाली चुंबकीय क्षेत्र रेखाएं खींचें।',
+        'अवलोकन करें कि ध्रुवों के पास क्षेत्र रेखाएं सघन होती हैं जहाँ चुंबकीय बल सर्वाधिक होता है।',
+        'सत्यापित करें कि दो चुंबकीय क्षेत्र रेखाएं कभी एक-दूसरे को नहीं काटती हैं।',
+      ],
+      theory:
+        'चुंबक के चारों ओर का वह क्षेत्र जिसमें उसके बल का अनुभव किया जा सकता है, चुंबकीय क्षेत्र कहलाता है। क्षेत्र रेखाएं काल्पनिक वक्र हैं जो चुंबकीय बल की दिशा दर्शाती हैं।',
+      safety: [
+        'दिक्सूचक सुई को अन्य बाहरी लोहे की वस्तुओं और फोन से दूर रखें।',
+        'लोहे के बुरादे को आंखों और सांस से दूर रखें।',
+      ],
+    },
+
+    // --- CHEMISTRY EXPERIMENTS (HINDI) ---
+    {
+      id: 'acids-bases',
+      title: 'सुरक्षित सूचकों द्वारा अम्ल एवं क्षार परीक्षण',
+      category: 'Chemistry',
+      difficulty: 'Beginner',
+      duration: '20 मिनट',
+      description: 'नीले/लाल लिटमस, हल्दी पत्र और फ़ीनॉल्फ़थैलिन सूचकों द्वारा सामान्य घरेलू व प्रयोगशाला पदार्थों का परीक्षण करें।',
+      route: '/lab/acids-bases',
+      isInteractive: false,
+      rating: 4.9,
+      enrolledCount: 1340,
+      iconName: 'beaker-outline',
+      badgeColor: '#EC4899',
+      apparatus: [
+        'नीले और लाल लिटमस पेपर की पट्टियां',
+        'प्राकृतिक हल्दी सूचक पत्र',
+        'फ़ीनॉल्फ़थैलिन घोल एवं ड्रॉपर',
+        'परखनली एवं परखनली स्टैंड',
+        'तनु हाइड्रोक्लोरिक अम्ल (0.1M) एवं तनु सोडियम हाइड्रोक्साइड (0.1M)',
+        'नींबू का रस, सिरका एवं साबुन का घोल',
+        'सुरक्षा चश्मा (Safety Goggles)',
+      ],
+      objectives: [
+        'रंग परिवर्तन के आधार पर पदार्थों को अम्लीय, क्षारीय अथवा उदासीन में वर्गीकृत करें।',
+        'अवलोकन करें कि अम्ल नीले लिटमस को लाल और क्षार लाल लिटमस को नीला कर देते हैं।',
+        'समान अनुपात में अम्ल और क्षार मिलाकर उदासीनीकरण अभिक्रिया प्रदर्शित करें।',
+      ],
+      theory:
+        'अम्ल जलीय विलयन में हाइड्रोजन आयन (H⁺) देते हैं और स्वाद में खट्टे होते हैं। क्षार हाइड्रॉक्साइड आयन (OH⁻) देते हैं और स्वाद में कड़वे व छूने में चिकने होते हैं। सूचक वे पदार्थ हैं जो माध्यम के अनुसार रंग बदलते हैं।',
+      safety: [
+        'प्रयोग के दौरान हमेशा सुरक्षा चश्मा पहनें।',
+        'किसी भी रसायन को कभी चखें या सीधे न सूंघें।',
+        'त्वचा पर कोई रसायन गिरने पर तुरंत बहते पानी से अच्छी तरह धोएं।',
+      ],
+    },
+    {
+      id: 'physical-chemical-changes',
+      title: 'भौतिक एवं रासायनिक परिवर्तन',
+      category: 'Chemistry',
+      difficulty: 'Beginner',
+      duration: '20 मिनट',
+      description: 'उत्क्रमणीय भौतिक परिवर्तनों और अनुत्क्रमणीय रासायनिक अभिक्रियाओं (मैग्नीशियम का जलना एवं लोहे द्वारा कॉपर विस्थापन) का अध्ययन करें।',
+      route: '/lab/physical-chemical-changes',
+      isInteractive: false,
+      rating: 4.7,
+      enrolledCount: 820,
+      iconName: 'flame-outline',
+      badgeColor: '#F59E0B',
+      apparatus: [
+        'मैग्नीशियम रिबन का टुकड़ा एवं रेगमाल',
+        'चिमटा (Tongs) एवं स्पिरिट बर्नर',
+        'वॉच ग्लास एवं चीनी मिट्टी की प्याली',
+        'कॉपर सल्फेट (नीला थोथा) क्रिस्टल एवं लोहे की कीलें',
+        'परखनलियां एवं 100 मिली बीकर',
+      ],
+      objectives: [
+        'उत्क्रमणीय भौतिक परिवर्तन और नए पदार्थ बनाने वाले रासायनिक परिवर्तन में अंतर समझें।',
+        'मैग्नीशियम रिबन के जलने पर तीव्र सफेद प्रकाश और मैग्नीशियम ऑक्साइड का बनना देखें।',
+        'लोहे की कील द्वारा कॉपर सल्फेट के नीले रंग को हरे रंग में बदलते हुए देखें।',
+      ],
+      theory:
+        'भौतिक परिवर्तन में पदार्थ के आकार या अवस्था में परिवर्तन होता है परंतु कोई नया पदार्थ नहीं बनता। रासायनिक परिवर्तन में नए रासायनिक गुणों वाले सर्वथा नए पदार्थ बनते हैं।',
+      safety: [
+        'जलते हुए मैग्नीशियम की तीव्र लौ को सीधी आंखों से न देखें।',
+        'जलते रिबन को हमेशा धातु के चिमटे से पकड़कर वॉच ग्लास के ऊपर रखें।',
+      ],
+    },
+    {
+      id: 'separation-mixtures',
+      title: 'पदार्थों एवं मिश्रणों का पृथक्करण',
+      category: 'Chemistry',
+      difficulty: 'Beginner',
+      duration: '20 मिनट',
+      description: 'अवसादन, निस्तारण, निस्यंदन (छानना) और वाष्पीकरण द्वारा रेत एवं नमक के जलीय मिश्रण को अलग करें।',
+      route: '/lab/separation-mixtures',
+      isInteractive: false,
+      rating: 4.6,
+      enrolledCount: 710,
+      iconName: 'filter-outline',
+      badgeColor: '#14B8A6',
+      apparatus: [
+        'कांच की कीप (Funnel) एवं फिल्टर पेपर शंकु',
+        'दो 250 मिली बीकर एवं कांच की छड़',
+        'तार की जाली युक्त तिपाई स्टैंड एवं बर्नर',
+        'वाष्पीकरण प्याली (Evaporating Dish)',
+        'रेत, साधारण नमक (NaCl) एवं पानी का मिश्रण',
+      ],
+      objectives: [
+        'विलेयता और कणों के आकार के आधार पर पदार्थों को अलग करने की विधि समझें।',
+        'फिल्टर पेपर की सहायता से अविलेय रेत को छानकर अलग करें।',
+        'नमक के घोल को गर्म करके शुद्ध सूखे नमक के क्रिस्टल प्राप्त करें।',
+      ],
+      theory:
+        'मिश्रण में घटक भौतिक रूप से मिले होते हैं। अविलेय ठोस कणों को निस्यंदन द्वारा अलग किया जाता है, जबकि विलेय ठोस को वाष्पीकरण द्वारा पुनः प्राप्त किया जाता है।',
+      safety: [
+        'बीकर को गर्म करते समय हमेशा तार की जाली का उपयोग करें।',
+        'छींटे पड़ने से बचने के लिए सारा पानी सूखने से पहले बर्नर बंद कर दें।',
+      ],
+    },
+
+    // --- BIOLOGY EXPERIMENTS (HINDI) ---
+    {
+      id: 'plant-animal-cell',
+      title: 'पादप एवं जंतु कोशिका का अध्ययन',
+      category: 'Biology',
+      difficulty: 'Beginner',
+      duration: '25 मिनट',
+      description: 'प्याज की झिल्ली और गाल की कोशिकाओं की अस्थायी स्लाइड बनाकर संयुक्त सूक्ष्मदर्शी की सहायता से कोशिका संरचना देखें।',
+      route: '/lab/plant-animal-cell',
+      isInteractive: false,
+      rating: 4.9,
+      enrolledCount: 1510,
+      iconName: 'eye-outline',
+      badgeColor: '#10B981',
+      apparatus: [
+        'संयुक्त प्रकाश सूक्ष्मदर्शी (10x एवं 40x लेंस)',
+        'कांच की स्लाइड एवं कवर स्लिप',
+        'ताज़ा प्याज एवं चिमटी',
+        'सैफ़्रानिन एवं मेथिलीन ब्लू अभिरंजक घोल',
+        'ग्लिसरीन, ड्रॉपर एवं फिल्टर पेपर',
+        'स्वच्छ लकड़ी की टूथपिक',
+      ],
+      objectives: [
+        'पादप और जंतु ऊतक की स्वच्छ, बिना बुलबुले वाली अस्थायी स्लाइड तैयार करना।',
+        'प्याज की कोशिका में कोशिका भित्ति, कोशिका झिल्ली, केंद्रक, कोशिका द्रव्य और रसधानी की पहचान करना।',
+        'जंतु कोशिका की तुलना करना और पादप कोशिका में कोशिका भित्ति की उपस्थिति को समझना।',
+      ],
+      theory:
+        'कोशिका सजीवों की मूलभूत संरचनात्मक एवं क्रियात्मक इकाई है। पादप कोशिकाओं में सेल्यूलोज की कठोर कोशिका भित्ति और बड़ी केंद्रीय रसधानी होती है, जो जंतु कोशिकाओं में नहीं होती।',
+      safety: [
+        'गाल के अंदर से खुरचते समय टूथपिक का प्रयोग अत्यंत कोमलता से करें।',
+        'इस्तेमाल की गई टूथपिक को तुरंत सुरक्षित रूप से फेंकें।',
+        'कवर स्लिप को 45 डिग्री के कोण पर धीरे से रखें ताकि हवा के बुलबुले न बनें।',
+      ],
+    },
+    {
+      id: 'photosynthesis-starch',
+      title: 'प्रकाश संश्लेषण एवं पत्तियों में स्टार्च परीक्षण',
+      category: 'Biology',
+      difficulty: 'Intermediate',
+      duration: '25 मिनट',
+      description: 'हरे पत्तों पर आयोडीन परीक्षण करके सिद्ध करें कि प्रकाश संश्लेषण की प्रक्रिया के लिए सूर्य का प्रकाश अनिवार्य है।',
+      route: '/lab/photosynthesis-starch',
+      isInteractive: false,
+      rating: 4.8,
+      enrolledCount: 930,
+      iconName: 'leaf-outline',
+      badgeColor: '#059669',
+      apparatus: [
+        'गमले में लगा हरा पौधा (48 घंटे अंधेरे में रखा गया)',
+        'काली कागज़ की पट्टी एवं क्लिप',
+        'बीकर, जल ऊष्मक (Water Bath) एवं परखनलियां',
+        'एथेनॉल / स्पिरिट (95%)',
+        'तनु आयोडीन घोल एवं पेट्री डिश',
+        'चिमटी एवं ड्रॉपर',
+      ],
+      objectives: [
+        'सिद्ध करना कि प्रकाश संश्लेषण के लिए क्लोरोफिल और सूर्य का प्रकाश आवश्यक है।',
+        'उबलते जल ऊष्मक में एथेनॉल द्वारा पत्ती का क्लोरोफिल निकालना।',
+        'आयोडीन द्वारा पत्ती के धूप वाले भाग में स्टार्च बनने का नीला-काला रंग देखना।',
+      ],
+      theory:
+        'प्रकाश संश्लेषण में पौधे कार्बन डाइऑक्साइड और जल से सूर्य के प्रकाश की उपस्थिति में भोजन (ग्लूकोज) बनाते हैं: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂। अतिरिक्त ग्लूकोज स्टार्च के रूप में संचित होता है।',
+      safety: [
+        'एथेनॉल अत्यधिक ज्वलनशील है। इसे कभी सीधी लौ पर न गर्म करें, सदैव जल ऊष्मक का प्रयोग करें।',
+        'गर्म पत्ती को छूने के लिए हमेशा चिमटी का प्रयोग करें।',
+      ],
+    },
+    {
+      id: 'seed-germination',
+      title: 'बीज अंकुरण एवं विकास के चरण',
+      category: 'Biology',
+      difficulty: 'Beginner',
+      duration: '15 मिनट',
+      description: 'भीगे हुए द्विबीजपत्री चने के बीज का विच्छेदन करके बीजावरण, बीजपत्र, मूलांकुर और प्रांकुर की पहचान करें।',
+      route: '/lab/seed-germination',
+      isInteractive: false,
+      rating: 4.7,
+      enrolledCount: 780,
+      iconName: 'nutrition-outline',
+      badgeColor: '#84CC16',
+      apparatus: [
+        'पानी में भीगे हुए चने या सेम के बीज (24 घंटे भीगे)',
+        'गीली रुई युक्त पेट्री डिश',
+        'हस्त आवर्धक लेंस (Hand Lens)',
+        'विच्छेदन सुई एवं चिमटी',
+        'मिलीमीटर पैमाना',
+      ],
+      objectives: [
+        'भीगे बीज का बाह्य आवरण (बीजावरण) सावधानी से हटाना।',
+        'भोजन संचित करने वाले दो बीजपत्रों को अलग करना।',
+        'मूलांकुर (भावी जड़) और प्रांकुर (भावी तना) की पहचान करना।',
+      ],
+      theory:
+        'अंकुरण वह प्रक्रिया है जिसमें अनुकूल नमी, वायु और ताप मिलने पर बीज का सुप्त भ्रूण वृद्धि प्रारंभ करता है। सबसे पहले मूलांकुर निकलकर जड़ बनाता है और फिर प्रांकुर तने का रूप लेता है।',
+      safety: [
+        'विच्छेदन सुई का उपयोग करते समय उंगली पर चोट न लगने दें।',
+        'रुई को नम रखें परंतु पानी में डुबोएं नहीं ताकि बीज को पर्याप्त ऑक्सीजन मिले।',
+      ],
+    },
+
+    // --- MATHEMATICS & SCIENTIFIC ACTIVITIES (HINDI) ---
+    {
+      id: 'binary-converter',
+      title: 'संख्या प्रणाली एवं बाइनरी रूपांतरण',
+      category: 'Mathematics',
+      difficulty: 'Beginner',
+      duration: '20 मिनट',
+      description: 'इंटरैक्टिव 8-बिट स्विचबोर्ड प्रयोगशाला। आधार-2 स्थानीय मान, बिट संयोजन और 2 से क्रमिक भाग के चरण सीखें।',
+      route: '/lab/binary-converter',
+      isInteractive: true,
+      rating: 4.8,
+      enrolledCount: 980,
+      iconName: 'calculator-outline',
+      badgeColor: '#06B6D4',
+      apparatus: [
+        '8-बिट स्थानीय मान रजिस्टर बैंक (2⁷ से 2⁰)',
+        'संख्या प्रणाली रूपांतरण इंजन (दशमलव, बाइनरी, हेक्स, ऑक्टल)',
+        'इंटरैक्टिव 2-से-विभाजन चरण ट्रैकर',
+        'स्थानीय मान योग संचयक डिस्प्ले',
+      ],
+      objectives: [
+        'आधार-2 बाइनरी संख्या प्रणाली और स्थानीय मानों (128, 64, 32, 16, 8, 4, 2, 1) को समझें।',
+        'किसी भी धनात्मक दशमलव संख्या को 2 से क्रमिक भाग विधि द्वारा बाइनरी में बदलना सीखें।',
+        'स्विच टॉगल करके स्थानीय मानों के योग से संख्या निरूपण का अभ्यास करें।',
+      ],
+      theory:
+        'गणित में किसी भी संख्या को उसके आधार की घातों के योग के रूप में व्यक्त किया जा सकता है। दशमलव प्रणाली आधार-10 (10 की घातें) का उपयोग करती है, जबकि बाइनरी प्रणाली आधार-2 (2 की घातें) का उपयोग करती है।',
+      safety: [
+        'स्कूली विद्यार्थियों के लिए सुरक्षित और इंटरैक्टिव डिजिटल गणितीय सिमुलेटर।',
+      ],
+    },
+    {
+      id: 'fractions-geometry',
+      title: 'भिन्न, क्षेत्रफल एवं परिमाप प्रयोगशाला',
+      category: 'Mathematics',
+      difficulty: 'Beginner',
+      duration: '20 मिनट',
+      description: 'ग्रिड बोर्ड पर ज्यामितीय आकृतियों की रचना करके परिमाप मापें, क्षेत्रफल निकालें और भिन्न भागों का अध्ययन करें।',
+      route: '/lab/fractions-geometry',
+      isInteractive: false,
+      rating: 4.7,
+      enrolledCount: 840,
+      iconName: 'shapes-outline',
+      badgeColor: '#8B5CF6',
+      apparatus: [
+        'इकाई वर्ग ग्रिड बोर्ड (1cm × 1cm ग्रिड खाने)',
+        'समतल ज्यामितीय आकृतियां (आयत, त्रिभुज, समांतर चतुर्भुज)',
+        'भिन्न पट्टी खंड सेट (1/2, 1/3, 1/4, 1/8)',
+        '30 सेमी पैमाना एवं चांदा',
+      ],
+      objectives: [
+        'बाहरी भुजाओं का योग करके परिमाप की गणना करना।',
+        'इकाई खानों को गिनकर और सूत्रों (लंबाई × चौड़ाई) से क्षेत्रफल निकालना।',
+        'ज्यामितीय आकृतियों के छायांकित भागों को भिन्न के रूप में व्यक्त करना।',
+      ],
+      theory:
+        'परिमाप किसी बंद समतल आकृति की कुल सीमा रेखा की लंबाई है। क्षेत्रफल उस आकृति द्वारा घेरे गए द्विविमीय तल का माप है। भिन्न किसी संपूर्ण इकाई के बराबर भागों को दर्शाती है।',
+      safety: [
+        'सुरक्षित व्यावहारिक ज्यामितीय आरेखन एवं मापन गतिविधि।',
+      ],
+    },
+  ],
+};
+
+export const LOCALIZED_PROGRESS: Record<'en' | 'hi', ProgressItem[]> = {
+  en: [
+    {
+      labId: 'ohms-law',
+      title: "Ohm's Law & Simple Circuit",
+      category: 'Physics',
+      progress: 75,
+      lastAccessed: 'Today, 10:30 AM',
+      status: 'in-progress',
+      score: 92,
+      route: '/lab/ohms-law',
+    },
+    {
+      labId: 'simple-pendulum',
+      title: 'Simple Pendulum & Time Period',
+      category: 'Physics',
+      progress: 100,
+      lastAccessed: 'Oct 22, 2026',
+      status: 'completed',
+      score: 95,
+      route: '/lab/simple-pendulum',
+    },
+    {
+      labId: 'acids-bases',
+      title: 'Acids and Bases with Safe Indicators',
+      category: 'Chemistry',
+      progress: 100,
+      lastAccessed: '3 days ago',
+      status: 'completed',
+      score: 98,
+      route: '/lab/acids-bases',
+    },
+    {
+      labId: 'plant-animal-cell',
+      title: 'Plant and Animal Cell Exploration',
+      category: 'Biology',
+      progress: 100,
+      lastAccessed: 'Oct 24, 2026',
+      status: 'completed',
+      score: 94,
+      route: '/lab/plant-animal-cell',
+    },
+    {
+      labId: 'binary-converter',
+      title: 'Number Systems & Binary Conversion',
+      category: 'Mathematics',
+      progress: 60,
+      lastAccessed: 'Yesterday',
+      status: 'in-progress',
+      score: 88,
+      route: '/lab/binary-converter',
+    },
+  ],
+  hi: [
+    {
+      labId: 'ohms-law',
+      title: 'ओह्म का नियम एवं सरल विद्युत परिपथ',
+      category: 'Physics',
+      progress: 75,
+      lastAccessed: 'आज, पूर्वाह्न 10:30',
+      status: 'in-progress',
+      score: 92,
+      route: '/lab/ohms-law',
+    },
+    {
+      labId: 'simple-pendulum',
+      title: 'सरल लोलक एवं आवर्तकाल',
+      category: 'Physics',
+      progress: 100,
+      lastAccessed: '22 अक्टूबर 2026',
+      status: 'completed',
+      score: 95,
+      route: '/lab/simple-pendulum',
+    },
+    {
+      labId: 'acids-bases',
+      title: 'सुरक्षित सूचकों द्वारा अम्ल एवं क्षार परीक्षण',
+      category: 'Chemistry',
+      progress: 100,
+      lastAccessed: '3 दिन पहले',
+      status: 'completed',
+      score: 98,
+      route: '/lab/acids-bases',
+    },
+    {
+      labId: 'plant-animal-cell',
+      title: 'पादप एवं जंतु कोशिका का अध्ययन',
+      category: 'Biology',
+      progress: 100,
+      lastAccessed: '24 अक्टूबर 2026',
+      status: 'completed',
+      score: 94,
+      route: '/lab/plant-animal-cell',
+    },
+    {
+      labId: 'binary-converter',
+      title: 'संख्या प्रणाली एवं बाइनरी रूपांतरण',
+      category: 'Mathematics',
+      progress: 60,
+      lastAccessed: 'कल',
+      status: 'in-progress',
+      score: 88,
+      route: '/lab/binary-converter',
+    },
+  ],
+};
+
+export const LOCALIZED_STUDENT: Record<'en' | 'hi', StudentProfile> = {
+  en: {
+    name: 'ApniLab Student',
+    email: 'student@apnilab.app',
+    college: 'Delhi Public Model School',
+    rollNo: 'AP-2026-001',
+    department: 'Secondary School Science',
+    semester: 'Class 10',
+    labsCompleted: 6,
+    hoursPracticed: 18.5,
+    averageScore: 92.5,
+    streakDays: 5,
+    isDemo: false,
+  },
+  hi: {
+    name: 'अपनीलैब छात्र',
+    email: 'student@apnilab.app',
+    college: 'दिल्ली पब्लिक मॉडल स्कूल',
+    rollNo: 'AP-2026-001',
+    department: 'माध्यमिक विद्यालय विज्ञान',
+    semester: 'कक्षा 10',
+    labsCompleted: 6,
+    hoursPracticed: 18.5,
+    averageScore: 92.5,
+    streakDays: 5,
+    isDemo: false,
+  },
+};
+
+/**
+ * Helper to get all laboratories in the selected language.
+ */
+export function getLocalizedLabs(language: 'en' | 'hi' = 'en'): LabItem[] {
+  return LOCALIZED_LABS[language] || LOCALIZED_LABS.en;
+}
+
+/**
+ * Helper to get a specific laboratory by ID in the selected language.
+ */
+export function getLocalizedLab(id: string, language: 'en' | 'hi' = 'en'): LabItem | undefined {
+  const labs = getLocalizedLabs(language);
+  return labs.find((lab) => lab.id === id) || LOCALIZED_LABS.en.find((lab) => lab.id === id);
+}
+
+/**
+ * Helper to get learning progress items in the selected language.
+ */
+export function getLocalizedProgress(language: 'en' | 'hi' = 'en'): ProgressItem[] {
+  return LOCALIZED_PROGRESS[language] || LOCALIZED_PROGRESS.en;
+}
+
+/**
+ * Helper to get student profile in the selected language.
+ */
+export function getLocalizedStudent(language: 'en' | 'hi' = 'en'): StudentProfile {
+  return LOCALIZED_STUDENT[language] || LOCALIZED_STUDENT.en;
+}
+
+// Backwards-compatible exports
+export const MOCK_LABS: LabItem[] = LOCALIZED_LABS.en;
+export const MOCK_PROGRESS: ProgressItem[] = LOCALIZED_PROGRESS.en;
+export const MOCK_STUDENT: StudentProfile = LOCALIZED_STUDENT.en;
