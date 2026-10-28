@@ -83,33 +83,38 @@ export function LabCard({ lab, featured = false }: LabCardProps) {
     router.push(lab.route as any);
   };
 
-  // Render dedicated icon for specified experiments
+  // Render dedicated icon for each experiment using the stable iconName from lab data
   const renderLabIcon = () => {
-    if (lab.id === 'ohms-law') {
-      return <AppIcon name="ohms-law" size={26} isDark={isDark} />;
+    // Experiment-specific icons keyed by lab.id (iconName matches the experiment id)
+    const experimentIconMap: Record<string, Parameters<typeof AppIcon>[0]['name']> = {
+      'ohms-law': 'ohms-law',
+      'simple-pendulum': 'pendulum',
+      'reflection-light': 'reflection-light',
+      'refraction-glass-slab': 'refraction-light',
+      'magnetic-field-lines': 'bar-magnet',
+      'acids-bases': 'acids-bases',
+      'physical-chemical-changes': 'chem-changes',
+      'separation-mixtures': 'separation-mixtures',
+      'plant-animal-cell': 'plant-cell',
+      'photosynthesis-starch': 'photosynthesis',
+      'seed-germination': 'seed-germination',
+      'binary-converter': 'binary-converter',
+      'fractions-geometry': 'fractions-geometry',
+    };
+
+    const experimentIcon = experimentIconMap[lab.id];
+    if (experimentIcon) {
+      return <AppIcon name={experimentIcon} size={26} isDark={isDark} />;
     }
-    if (lab.id === 'simple-pendulum') {
-      return <AppIcon name="pendulum" size={26} isDark={isDark} />;
-    }
-    if (lab.id === 'binary-converter' || lab.category === 'Mathematics') {
-      return <AppIcon name="mathematics" size={26} isDark={isDark} />;
-    }
-    if (lab.category === 'Chemistry') {
-      return <AppIcon name="chemistry" size={26} isDark={isDark} />;
-    }
-    if (lab.category === 'Biology') {
-      return <AppIcon name="biology" size={26} isDark={isDark} />;
-    }
-    if (lab.category === 'Physics') {
-      return <AppIcon name="physics" size={26} isDark={isDark} />;
-    }
-    return (
-      <Ionicons
-        name={(lab.iconName as any) || 'flask-outline'}
-        size={22}
-        color={lab.badgeColor || theme.tint}
-      />
-    );
+
+    // Subject-level fallback
+    if (lab.category === 'Physics') return <AppIcon name="physics" size={26} isDark={isDark} />;
+    if (lab.category === 'Chemistry') return <AppIcon name="chemistry" size={26} isDark={isDark} />;
+    if (lab.category === 'Biology') return <AppIcon name="biology" size={26} isDark={isDark} />;
+    if (lab.category === 'Mathematics') return <AppIcon name="mathematics" size={26} isDark={isDark} />;
+
+    // Final fallback: generic flask icon
+    return <Ionicons name="flask-outline" size={22} color={lab.badgeColor || theme.tint} />;
   };
 
   return (

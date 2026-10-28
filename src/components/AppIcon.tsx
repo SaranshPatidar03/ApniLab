@@ -14,12 +14,26 @@ export type AppIconName =
   | 'lab-hours'
   | 'active-streak'
   | 'avg-score'
-  | 'ohms-law'
-  | 'pendulum'
+  // Subject discipline icons
   | 'physics'
   | 'chemistry'
   | 'biology'
   | 'mathematics'
+  // Experiment-specific icons (keyed by experiment id)
+  | 'ohms-law'
+  | 'pendulum'
+  | 'reflection-light'
+  | 'refraction-light'
+  | 'bar-magnet'
+  | 'acids-bases'
+  | 'chem-changes'
+  | 'separation-mixtures'
+  | 'plant-cell'
+  | 'photosynthesis'
+  | 'seed-germination'
+  | 'binary-converter'
+  | 'fractions-geometry'
+  // UI
   | 'bot';
 
 interface AppIconProps {
@@ -457,6 +471,164 @@ function renderIconSvg(name: AppIconName, size: number, isDark: boolean) {
             strokeWidth="2"
             strokeLinecap="round"
           />
+        </Svg>
+      );
+
+    /** Reflection of Light — mirror and ray bouncing */
+    case 'reflection-light':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Rect x="10" y="34" width="28" height="4" rx="2" fill="#60A5FA" stroke="#2563EB" strokeWidth="1.5" />
+          <Line x1="10" y1="10" x2="24" y2="34" stroke="#FACC15" strokeWidth="2.5" strokeLinecap="round" />
+          <Line x1="24" y1="34" x2="38" y2="10" stroke="#F97316" strokeWidth="2.5" strokeLinecap="round" />
+          <Line x1="24" y1="14" x2="24" y2="34" stroke="#94A3B8" strokeWidth="1.2" strokeDasharray="3 2" strokeLinecap="round" />
+          <Path d="M22 14L24 10L26 14" stroke="#FACC15" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          <Path d="M36 14L38 10L40 14" stroke="#F97316" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        </Svg>
+      );
+
+    /** Refraction of Light — prism bending light */
+    case 'refraction-light':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Path d="M24 6L42 38H6L24 6Z" fill="#BFDBFE" stroke="#3B82F6" strokeWidth="2" strokeLinejoin="round" />
+          <Line x1="6" y1="20" x2="18" y2="28" stroke="#FACC15" strokeWidth="2.5" strokeLinecap="round" />
+          <Line x1="18" y1="28" x2="30" y2="36" stroke="#38BDF8" strokeWidth="2" strokeLinecap="round" strokeDasharray="3 2" />
+          <Line x1="30" y1="36" x2="44" y2="30" stroke="#F97316" strokeWidth="2.5" strokeLinecap="round" />
+        </Svg>
+      );
+
+    /** Bar Magnet — N-S bar with field lines */
+    case 'bar-magnet':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Rect x="8" y="20" width="16" height="10" rx="2" fill="#DC2626" />
+          <Rect x="24" y="20" width="16" height="10" rx="2" fill="#2563EB" />
+          <SvgText x="16" y="28" textAnchor="middle" fill="#FFFFFF" fontSize="7" fontWeight="bold" fontFamily="System">N</SvgText>
+          <SvgText x="32" y="28" textAnchor="middle" fill="#FFFFFF" fontSize="7" fontWeight="bold" fontFamily="System">S</SvgText>
+          <Path d="M16 20C16 12 32 12 32 20" stroke="#94A3B8" strokeWidth="1.5" strokeDasharray="2 2" fill="none" strokeLinecap="round" />
+          <Path d="M12 20C12 8 36 8 36 20" stroke="#CBD5E1" strokeWidth="1" strokeDasharray="2 2" fill="none" strokeLinecap="round" />
+          <Path d="M16 30C16 38 32 38 32 30" stroke="#94A3B8" strokeWidth="1.5" strokeDasharray="2 2" fill="none" strokeLinecap="round" />
+          <Path d="M12 30C12 42 36 42 36 30" stroke="#CBD5E1" strokeWidth="1" strokeDasharray="2 2" fill="none" strokeLinecap="round" />
+        </Svg>
+      );
+
+    /** Acids and Bases — two test tubes with indicator colors */
+    case 'acids-bases':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Path d="M14 10V30C14 34 18 36 20 34L22 30V10H14Z" fill="#FCA5A5" stroke="#DC2626" strokeWidth="1.5" strokeLinejoin="round" />
+          <Rect x="13" y="8" width="10" height="3" rx="1.5" fill="#DC2626" />
+          <Circle cx="18" cy="30" r="3" fill="#EF4444" opacity={0.9} />
+          <Path d="M26 10V30C26 34 30 36 32 34L34 30V10H26Z" fill="#BAE6FD" stroke="#2563EB" strokeWidth="1.5" strokeLinejoin="round" />
+          <Rect x="25" y="8" width="10" height="3" rx="1.5" fill="#2563EB" />
+          <Circle cx="30" cy="30" r="3" fill="#3B82F6" opacity={0.9} />
+          <SvgText x="24" y="45" textAnchor="middle" fill="#7C3AED" fontSize="7" fontWeight="bold" fontFamily="System">pH</SvgText>
+        </Svg>
+      );
+
+    /** Chemical Changes — beaker on flame */
+    case 'chem-changes':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Path d="M14 14H34V34C34 36 32 38 30 38H18C16 38 14 36 14 34V14Z" fill="#FEF9C3" stroke="#F59E0B" strokeWidth="2" strokeLinejoin="round" />
+          <Rect x="12" y="11" width="24" height="4" rx="2" fill="#F59E0B" />
+          <Path d="M14 30C18 28 22 32 26 30C30 28 34 30 34 30V34C34 36 32 38 30 38H18C16 38 14 36 14 34V30Z" fill="#FDE047" opacity={0.8} />
+          <Path d="M20 42C20 42 22 38 24 40C26 42 28 38 28 38C28 38 30 43 24 45C18 43 20 42 20 42Z" fill="#F97316" />
+          <Path d="M22 43C22 43 23 40 24 41C25 42 26 40 26 40C26 40 27 44 24 45C21 44 22 43 22 43Z" fill="#FACC15" />
+          <Circle cx="20" cy="26" r="2" fill="#FFFFFF" opacity={0.8} />
+          <Circle cx="26" cy="24" r="1.5" fill="#FFFFFF" opacity={0.7} />
+        </Svg>
+      );
+
+    /** Separation of Mixtures — filter funnel */
+    case 'separation-mixtures':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Path d="M8 10H40L28 26V38H20V26L8 10Z" fill="#CCFBF1" stroke="#0D9488" strokeWidth="2" strokeLinejoin="round" />
+          <Line x1="14" y1="18" x2="34" y2="18" stroke="#0D9488" strokeWidth="1" strokeDasharray="2 2" />
+          <Line x1="18" y1="23" x2="30" y2="23" stroke="#0D9488" strokeWidth="1" strokeDasharray="2 2" />
+          <Path d="M24 38C24 38 23 41 24 43C25 41 24 38 24 38Z" fill="#0D9488" />
+          <Circle cx="24" cy="45" r="2" fill="#14B8A6" />
+        </Svg>
+      );
+
+    /** Plant and Animal Cell — rectangular plant cell cross-section */
+    case 'plant-cell':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Rect x="6" y="8" width="36" height="32" rx="4" fill="#D1FAE5" stroke="#059669" strokeWidth="2.5" />
+          <Rect x="9" y="11" width="30" height="26" rx="3" fill="none" stroke="#34D399" strokeWidth="1.2" strokeDasharray="3 2" />
+          <Circle cx="24" cy="24" r="7" fill="#6EE7B7" stroke="#047857" strokeWidth="2" />
+          <Circle cx="24" cy="24" r="3.5" fill="#047857" opacity={0.8} />
+          <Rect x="14" y="28" width="8" height="6" rx="2" fill="#A7F3D0" stroke="#059669" strokeWidth="1" />
+          <Circle cx="34" cy="16" r="2.5" fill="#16A34A" />
+          <Circle cx="38" cy="22" r="2" fill="#16A34A" />
+        </Svg>
+      );
+
+    /** Photosynthesis — leaf with sun rays */
+    case 'photosynthesis':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Circle cx="36" cy="12" r="5" fill="#FACC15" />
+          <Line x1="36" y1="4" x2="36" y2="6" stroke="#FACC15" strokeWidth="2" strokeLinecap="round" />
+          <Line x1="42" y1="6" x2="40.5" y2="7.5" stroke="#FACC15" strokeWidth="2" strokeLinecap="round" />
+          <Line x1="44" y1="12" x2="42" y2="12" stroke="#FACC15" strokeWidth="2" strokeLinecap="round" />
+          <Line x1="42" y1="18" x2="40.5" y2="16.5" stroke="#FACC15" strokeWidth="2" strokeLinecap="round" />
+          <Path d="M36 22C24 16 8 22 8 36C22 36 36 26 36 22Z" fill="#16A34A" />
+          <Path d="M8 36C12 30 22 26 36 22" stroke="#14532D" strokeWidth="1.8" strokeLinecap="round" />
+          <Path d="M16 34C18 30 22 28 26 30" stroke="#14532D" strokeWidth="1.2" strokeLinecap="round" />
+          <Path d="M32 18L26 22" stroke="#FACC15" strokeWidth="1.5" strokeLinecap="round" />
+          <Path d="M24 21L26 22L25 24" stroke="#FACC15" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        </Svg>
+      );
+
+    /** Seed Germination — sprouting seedling */
+    case 'seed-germination':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Rect x="4" y="34" width="40" height="8" rx="3" fill="#92400E" opacity={0.5} />
+          <Path d="M20 34C20 28 24 26 24 26C24 26 28 28 28 34" fill="#78350F" stroke="#92400E" strokeWidth="1.5" />
+          <Line x1="24" y1="26" x2="24" y2="12" stroke="#16A34A" strokeWidth="3" strokeLinecap="round" />
+          <Path d="M24 18C24 18 14 15 12 20C17 22 24 20 24 18Z" fill="#22C55E" />
+          <Path d="M24 22C24 22 34 19 36 24C31 26 24 24 24 22Z" fill="#16A34A" />
+          <Path d="M24 34C24 34 20 38 22 42" stroke="#92400E" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 2" />
+          <Path d="M24 34C24 34 28 38 26 42" stroke="#92400E" strokeWidth="1.5" strokeLinecap="round" strokeDasharray="2 2" />
+        </Svg>
+      );
+
+    /** Binary Converter — digital 0/1 grid */
+    case 'binary-converter':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Rect x="4" y="4" width="40" height="40" rx="10" fill={isDark ? '#083344' : '#E0F2FE'} stroke="#0284C7" strokeWidth="2" />
+          <SvgText x="12" y="20" textAnchor="middle" fill="#0284C7" fontSize="10" fontWeight="bold" fontFamily="System">1</SvgText>
+          <SvgText x="24" y="20" textAnchor="middle" fill="#94A3B8" fontSize="10" fontWeight="bold" fontFamily="System">0</SvgText>
+          <SvgText x="36" y="20" textAnchor="middle" fill="#0284C7" fontSize="10" fontWeight="bold" fontFamily="System">1</SvgText>
+          <SvgText x="12" y="32" textAnchor="middle" fill="#94A3B8" fontSize="10" fontWeight="bold" fontFamily="System">0</SvgText>
+          <SvgText x="24" y="32" textAnchor="middle" fill="#0284C7" fontSize="10" fontWeight="bold" fontFamily="System">1</SvgText>
+          <SvgText x="36" y="32" textAnchor="middle" fill="#94A3B8" fontSize="10" fontWeight="bold" fontFamily="System">0</SvgText>
+          <SvgText x="12" y="44" textAnchor="middle" fill="#0284C7" fontSize="10" fontWeight="bold" fontFamily="System">1</SvgText>
+          <SvgText x="24" y="44" textAnchor="middle" fill="#0284C7" fontSize="10" fontWeight="bold" fontFamily="System">1</SvgText>
+          <SvgText x="36" y="44" textAnchor="middle" fill="#94A3B8" fontSize="10" fontWeight="bold" fontFamily="System">0</SvgText>
+        </Svg>
+      );
+
+    /** Fractions & Geometry — divided circle with ruler */
+    case 'fractions-geometry':
+      return (
+        <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+          <Circle cx="22" cy="22" r="16" fill="#EDE9FE" stroke="#7C3AED" strokeWidth="2" />
+          <Path d="M22 22L22 6A16 16 0 0 1 38 22Z" fill="#8B5CF6" opacity={0.85} />
+          <Path d="M22 22L38 22A16 16 0 0 1 22 38Z" fill="#A78BFA" opacity={0.6} />
+          <Line x1="22" y1="6" x2="22" y2="38" stroke="#7C3AED" strokeWidth="1.5" />
+          <Line x1="6" y1="22" x2="38" y2="22" stroke="#7C3AED" strokeWidth="1.5" />
+          <SvgText x="32" y="16" textAnchor="middle" fill="#5B21B6" fontSize="7" fontWeight="bold" fontFamily="System">¼</SvgText>
+          <Rect x="28" y="36" width="18" height="8" rx="2" fill="#DDD6FE" stroke="#7C3AED" strokeWidth="1.5" />
+          <Line x1="32" y1="36" x2="32" y2="40" stroke="#7C3AED" strokeWidth="1" />
+          <Line x1="36" y1="36" x2="36" y2="42" stroke="#7C3AED" strokeWidth="1" />
+          <Line x1="40" y1="36" x2="40" y2="40" stroke="#7C3AED" strokeWidth="1" />
         </Svg>
       );
 

@@ -14,7 +14,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: true,
       rating: 4.9,
       enrolledCount: 1420,
-      iconName: 'flash',
+      iconName: 'ohms-law',
       badgeColor: '#4F46E5',
       apparatus: [
         'Battery Eliminator / DC Power Supply (0V - 12V)',
@@ -48,7 +48,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.7,
       enrolledCount: 980,
-      iconName: 'speedometer-outline',
+      iconName: 'pendulum',
       badgeColor: '#10B981',
       apparatus: [
         'Heavy Metallic Spherical Bob with Hook',
@@ -81,7 +81,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.8,
       enrolledCount: 1120,
-      iconName: 'sunny-outline',
+      iconName: 'reflection-light',
       badgeColor: '#3B82F6',
       apparatus: [
         'Plane Mirror Strip with Wooden Stand',
@@ -112,7 +112,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.8,
       enrolledCount: 890,
-      iconName: 'cube-outline',
+      iconName: 'refraction-light',
       badgeColor: '#6366F1',
       apparatus: [
         'Rectangular Glass Slab',
@@ -143,7 +143,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.6,
       enrolledCount: 760,
-      iconName: 'magnet-outline',
+      iconName: 'bar-magnet',
       badgeColor: '#0EA5E9',
       apparatus: [
         'Bar Magnet with North and South Poles Marked',
@@ -176,7 +176,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.9,
       enrolledCount: 1340,
-      iconName: 'beaker-outline',
+      iconName: 'acids-bases',
       badgeColor: '#EC4899',
       apparatus: [
         'Blue and Red Litmus Paper Strips',
@@ -211,7 +211,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.7,
       enrolledCount: 820,
-      iconName: 'flame-outline',
+      iconName: 'chem-changes',
       badgeColor: '#F59E0B',
       apparatus: [
         'Clean Magnesium Ribbon Strip & Sandpaper',
@@ -244,7 +244,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.6,
       enrolledCount: 710,
-      iconName: 'filter-outline',
+      iconName: 'separation-mixtures',
       badgeColor: '#14B8A6',
       apparatus: [
         'Glass Filter Funnel & Circular Filter Paper Cone',
@@ -278,7 +278,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.9,
       enrolledCount: 1510,
-      iconName: 'eye-outline',
+      iconName: 'plant-cell',
       badgeColor: '#10B981',
       apparatus: [
         'Compound Optical Microscope (10x & 40x objectives)',
@@ -312,7 +312,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.8,
       enrolledCount: 930,
-      iconName: 'leaf-outline',
+      iconName: 'photosynthesis',
       badgeColor: '#059669',
       apparatus: [
         'Potted Green Plant (Destarched for 48 hours)',
@@ -345,7 +345,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.7,
       enrolledCount: 780,
-      iconName: 'nutrition-outline',
+      iconName: 'seed-germination',
       badgeColor: '#84CC16',
       apparatus: [
         'Soaked Gram (Chana) or Bean Seeds (soaked for 24h)',
@@ -379,7 +379,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: true,
       rating: 4.8,
       enrolledCount: 980,
-      iconName: 'calculator-outline',
+      iconName: 'binary-converter',
       badgeColor: '#06B6D4',
       apparatus: [
         '8-Bit Place Value Register Bank (2⁷ to 2⁰)',
@@ -409,7 +409,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.7,
       enrolledCount: 840,
-      iconName: 'shapes-outline',
+      iconName: 'fractions-geometry',
       badgeColor: '#8B5CF6',
       apparatus: [
         'Unit Square Grid Board (1cm × 1cm grid cells)',
@@ -477,7 +477,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.7,
       enrolledCount: 980,
-      iconName: 'speedometer-outline',
+      iconName: 'pendulum',
       badgeColor: '#10B981',
       apparatus: [
         'हुक युक्त धातु का गोलाकार गोलक (बॉब)',
@@ -510,7 +510,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.8,
       enrolledCount: 1120,
-      iconName: 'sunny-outline',
+      iconName: 'reflection-light',
       badgeColor: '#3B82F6',
       apparatus: [
         'स्टैंड युक्त समतल दर्पण पट्टी',
@@ -541,7 +541,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.8,
       enrolledCount: 890,
-      iconName: 'cube-outline',
+      iconName: 'refraction-light',
       badgeColor: '#6366F1',
       apparatus: [
         'आयताकार कांच की पट्टी (Glass Slab)',
@@ -572,7 +572,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.6,
       enrolledCount: 760,
-      iconName: 'magnet-outline',
+      iconName: 'bar-magnet',
       badgeColor: '#0EA5E9',
       apparatus: [
         'उत्तर और दक्षिण ध्रुव अंकित छड़ चुंबक',
@@ -605,7 +605,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.9,
       enrolledCount: 1340,
-      iconName: 'beaker-outline',
+      iconName: 'acids-bases',
       badgeColor: '#EC4899',
       apparatus: [
         'नीले और लाल लिटमस पेपर की पट्टियां',
@@ -640,7 +640,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.7,
       enrolledCount: 820,
-      iconName: 'flame-outline',
+      iconName: 'chem-changes',
       badgeColor: '#F59E0B',
       apparatus: [
         'मैग्नीशियम रिबन का टुकड़ा एवं रेगमाल',
@@ -672,7 +672,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.6,
       enrolledCount: 710,
-      iconName: 'filter-outline',
+      iconName: 'separation-mixtures',
       badgeColor: '#14B8A6',
       apparatus: [
         'कांच की कीप (Funnel) एवं फिल्टर पेपर शंकु',
@@ -706,7 +706,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.9,
       enrolledCount: 1510,
-      iconName: 'eye-outline',
+      iconName: 'plant-cell',
       badgeColor: '#10B981',
       apparatus: [
         'संयुक्त प्रकाश सूक्ष्मदर्शी (10x एवं 40x लेंस)',
@@ -740,7 +740,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.8,
       enrolledCount: 930,
-      iconName: 'leaf-outline',
+      iconName: 'photosynthesis',
       badgeColor: '#059669',
       apparatus: [
         'गमले में लगा हरा पौधा (48 घंटे अंधेरे में रखा गया)',
@@ -773,7 +773,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.7,
       enrolledCount: 780,
-      iconName: 'nutrition-outline',
+      iconName: 'seed-germination',
       badgeColor: '#84CC16',
       apparatus: [
         'पानी में भीगे हुए चने या सेम के बीज (24 घंटे भीगे)',
@@ -807,7 +807,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: true,
       rating: 4.8,
       enrolledCount: 980,
-      iconName: 'calculator-outline',
+      iconName: 'binary-converter',
       badgeColor: '#06B6D4',
       apparatus: [
         '8-बिट स्थानीय मान रजिस्टर बैंक (2⁷ से 2⁰)',
@@ -837,7 +837,7 @@ export const LOCALIZED_LABS: Record<'en' | 'hi', LabItem[]> = {
       isInteractive: false,
       rating: 4.7,
       enrolledCount: 840,
-      iconName: 'shapes-outline',
+      iconName: 'fractions-geometry',
       badgeColor: '#8B5CF6',
       apparatus: [
         'इकाई वर्ग ग्रिड बोर्ड (1cm × 1cm ग्रिड खाने)',
